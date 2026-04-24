@@ -1,0 +1,98 @@
+:root {
+  --bg: #f7f6fb;
+  --surface: rgba(255,255,255,0.88);
+  --text: #23242a;
+  --muted: #666b77;
+  --accent: #5a5cf6;
+  --border: rgba(90,92,246,0.12);
+  --shadow: 0 20px 60px rgba(25, 28, 46, 0.10);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1320;
+    --surface: rgba(21,26,41,0.84);
+    --text: #f3f5fb;
+    --muted: #b5bdd0;
+    --accent: #8e90ff;
+    --border: rgba(142,144,255,0.18);
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(90,92,246,0.16), transparent 32%),
+    radial-gradient(circle at top left, rgba(255,105,180,0.08), transparent 28%),
+    var(--bg);
+  line-height: 1.75;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container {
+  width: min(920px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 40px 0 56px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 28px 24px;
+}
+.hero { margin-bottom: 18px; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.brand-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #5a5cf6, #8e90ff);
+  color: white;
+  font-size: 22px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+h1, h2, h3 {
+  line-height: 1.22;
+  margin: 1.2em 0 0.56em;
+}
+h1 { font-size: clamp(2rem, 4vw, 2.9rem); margin-top: 0.2em; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.02rem; color: var(--text); }
+p, li { color: var(--text); }
+ul { padding-left: 1.25rem; }
+nav.lang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+nav.lang a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.5);
+}
+.footer {
+  margin-top: 22px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
